@@ -1,11 +1,11 @@
 FROM sewatech/java8
 MAINTAINER Alexis Hassler <alexis@sewatech.org>
 
-ENV WILDFLY_CORE_VERSION 1.0.0.Beta2
+ENV WILDFLY_CORE_VERSION latest
 
 RUN apt-get update && apt-get install -y unzip &&\
     curl -Ls https://bintray.com/artifact/download/hasalex/generic/wildfly-core-$WILDFLY_CORE_VERSION.zip -o wildfly-core.zip && \
-    unzip -q wildfly-core.zip && rm wildfly-core.zip && mv wildfly-core-$WILDFLY_CORE_VERSION wildfly-core &&\
+    unzip -q wildfly-core.zip && rm wildfly-core.zip && mv wildfly-core-* wildfly-core &&\
     wildfly-core/bin/add-user.sh --silent admin passw0rd!
 
 EXPOSE 9990
