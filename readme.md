@@ -6,7 +6,9 @@ Connection to the Management tools :
 * username : admin
 * password : passw0rd!
 
-Latest SNAPSHOT
+Tags are following wildfly-core versions
+
+Build with latest SNAPSHOT
 ----
 
 From a binary distribution, built independently, because there's no official distribution.
@@ -24,7 +26,7 @@ Pick and upload the zip file :
          "X-Bintray-Override: 1" -H "X-Bintray-Publish: 1" \
          https://api.bintray.com/content/$BT_USER/generic/wildfly-core/$version/wildfly-core-$version.zip
 
-Releases
+ Build with a release
 ----
 
 Dist archives can be found in JBoss' Nexus repository.
