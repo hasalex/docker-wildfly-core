@@ -1,4 +1,4 @@
-FROM sewatech/java8
+FROM sewatech/java:8
 MAINTAINER Alexis Hassler <alexis@sewatech.org>
 
 ENV WILDFLY_CORE_VERSION latest
