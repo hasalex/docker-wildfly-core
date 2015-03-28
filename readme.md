@@ -1,6 +1,14 @@
 WildFly Core image
 ====
 
+Connection to the Management tools :
+
+* username : admin
+* password : passw0rd!
+
+Latest SNAPSHOT
+----
+
 From a binary distribution, built independently, because there's no official distribution.
 
 Build from the source :
@@ -15,3 +23,10 @@ Pick and upload the zip file :
          -u$BT_USER:$BT_KEY -H \
          "X-Bintray-Override: 1" -H "X-Bintray-Publish: 1" \
          https://api.bintray.com/content/$BT_USER/generic/wildfly-core/$version/wildfly-core-$version.zip
+
+Releases
+----
+
+Dist archives can be found in JBoss' Nexus repository.
+
+    curl -Ls https://repository.jboss.org/nexus/service/local/repositories/releases/content/org/wildfly/core/wildfly-core-dist/$WILDFLY_CORE_VERSION/wildfly-core-dist-$WILDFLY_CORE_VERSION.zip -o wildfly-core.zip
