@@ -15,6 +15,7 @@ RUN curl -Ls https://bintray.com/artifact/download/hasalex/generic/wildfly-core-
 USER java
 
 COPY standalone.conf /wildfly-core/bin/
+COPY desc.txt /
 
 WORKDIR /wildfly-core/
 
