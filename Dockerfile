@@ -9,12 +9,16 @@ USER root
 #    curl -Ls https://repository.jboss.org/nexus/service/local/repositories/releases/content/org/wildfly/core/wildfly-core-dist/$WILDFLY_CORE_VERSION/wildfly-core-dist-$WILDFLY_CORE_VERSION.zip -o wildfly-core.zip &&\
 RUN curl -Ls https://bintray.com/artifact/download/hasalex/generic/wildfly-core-$WILDFLY_CORE_VERSION.zip -o wildfly-core.zip &&\
     unzip -q wildfly-core.zip && rm wildfly-core.zip && mv wildfly-core-* wildfly-core &&\
-    chown -R java:java wildfly-core &&\
-    wildfly-core/bin/add-user.sh --silent admin passw0rd!
+    chown -R java:java /wildfly-core &&\
+    /wildfly-core/bin/add-user.sh --silent admin passw0rd!
 
 USER java
 
+COPY standalone.conf /wildfly-core/bin/
+
+WORKDIR /wildfly-core/
+
 EXPOSE 9990
 
-ENTRYPOINT ["/wildfly-core/bin/standalone.sh"]
-CMD []
+ENTRYPOINT []
+CMD ["/wildfly-core/bin/standalone.sh"]
